@@ -9,10 +9,17 @@ import { Cancion } from '../modelo/cancion';
 export class CancionesService {
 
   private url = 'http://localhost:8080/canciones';
+  private urlLoveCancion = 'http://localhost:8080/loveTrack?id=idCancion'
 
   constructor(private http: HttpClient) { }
 
   obtenerCanciones(): Observable<Cancion[]> {
     return this.http.get<Cancion[]>(this.url);
   }
+/*
+  favoriteCancion(): Observable<Cancion[]> {
+  
+  }
+*/
+
 }

@@ -12,11 +12,16 @@ export class AlbumesComponent {
   constructor(private albumesService: AlbumesService) {}
 
   @Input() albumes: Album[] = [];
+  @Output() favoriteAlbum = new EventEmitter<Album>();
 
   readonly albumSeleccionado = output<Album>();
 
   ngOnInit(): void {
     this.albumesService.obtenerAlbumes().subscribe(list => this.albumes = list);
+  }
+
+  favorite(album: Album) {
+    album.loved = true;
   }
 
 }

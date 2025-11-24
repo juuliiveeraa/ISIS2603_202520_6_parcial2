@@ -9,10 +9,18 @@ import { Album } from '../modelo/album'
 export class AlbumesService {
 
   private url = 'http://localhost:8080/albumes';
+  private urlLoveAlbum = 'http://localhost:8080/loveTrack?id=idAlbum'
 
   constructor(private http: HttpClient) { }
 
   obtenerAlbumes(): Observable<Album[]> {
     return this.http.get<Album[]>(this.url)
   }
+
+  /*
+  favoriteAlbum(): Observable<Album[]> {
+  
+  }
+*/
+
 }

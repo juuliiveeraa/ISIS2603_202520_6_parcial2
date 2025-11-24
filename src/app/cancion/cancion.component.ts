@@ -2,6 +2,7 @@ import { Component, Input, output, EventEmitter, Output} from '@angular/core';
 import { CancionesService } from '../servicio/canciones.service'
 import { AlbumesService } from '../servicio/albumes.service'
 import { Cancion } from '../modelo/cancion'
+import { Album } from '../modelo/album'
 
 @Component({
   selector: 'app-cancion',
@@ -13,12 +14,13 @@ export class CancionComponent {
 
   constructor(private cancionesService: CancionesService) {}
 
-  @Input() canciones: Cancion[] = [];
+  @Input() album: Album[] = [];
+  @Output() favoriteCancion = new EventEmitter<Cancion>();
 
   readonly cancionSeleccionada = output<Cancion>();
 
-  ngOnInit(): void {
-    this.cancionesService.obtenerCanciones().subscribe(list => this.canciones = list);
-  }
+  favorite(cancion: Cancion) {
+      cancion.loved = true;
+    }
 
 }
