@@ -4,6 +4,8 @@ Código: 202411275
 Pregunta 4
 Estoy en el inicio de la implementación apenas, pero pienso que albumDetalle será una clase y heredará de album porque comparten todos los atributos excepto loved:boolean, y ese no es necesario en los parámetros del constructor, por lo que no hay problema en que albumDetalle no tenga loved. 
 
+No me dio el tiempo para hacer los html perdon
+
 # FrontendExamen2
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.2.
